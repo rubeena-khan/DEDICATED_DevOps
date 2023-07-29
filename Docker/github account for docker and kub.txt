@@ -1,0 +1,14 @@
+1. https://github.com/mr-nsin/references/blob/master/Docker%20Deep%20Dive%20by%20Nigel%20Poulton.pdf
+
+mr-nsin
+
+---------------
+2.https://github.com/bregman-arie/devops-resources/tree/master
+devops road map 
+
+3.https://github.com/veggiemonk/awesome-docker
+puura docker 
+
+4. https://www.sitepoint.com/github-profile-readme/
+github readme banana 
+
