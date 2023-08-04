@@ -1,0 +1,320 @@
+Linux
+
+File permissions
+----------------
+
+1. Every file / folder - 3 types of permissions
+
+r - read	w - write	x - Execute
+rwx
+
+2. Permissions can be assigned for 3 categories
+
+owner	Group	others
+owner - whoever has created the file / folder is owner
+Group - To which group he belongs to
+others - other than owner and group
+
+3. Permissions are assigned by owner
+
+owner/group/others
+rwx rwx rwx
+421 421 421
+
+abc - 	rw_r--r--	644
+abc1	rwxr-x---	750
+xyz     r--r-----	440
+
+775 	rwxrwxr-x
+664	rw-rw-r--
+650	rw-r-x---
+541	r-xr----x
+
+chmod 644 abc
+(owner)
+
+
+PROCESS	- Systamatic approach / procedures which defines the task
+-------
+Task - activities 
+fetch - executing
+
+Task Types are inititated from OS, Applications, Users, Network
+
+
+How to list the process
+$ ps 	(process status in your terminal)
+$ ps -ef (e-extended, f- full list) 
+
+Every process has an ID (Unique)
+ID who initiates the task is called as parent Process
+parent child relationship
+
+Foreground process - a task initiated / running on bash shell
+background process - a task initiated without help of bash shell
+
+$ sleep 1000 
+$ jobs		(PID & PPID)
+	
+How to terminate Process
+------------------------
+
+kill
+
+1 - nohup
+9 - Force kill
+15 - sigterm
+
+kill -9 pid
+
+How to increase /decrease priority of task / job
+------------------------------------------------
+
+priority times lines
+
+(--------------------------------------------------------------------)
+-20 				0				  +19
+Very high priority						Very less
+								prioirty
+ni - nice priority
+renice - for existing tasks priorities
+nice - new task priorities
+
+
+
+27.04.2022
+----------
+
+Editing with Vi / ViM  (Visual interactive)	- vi Improved
+
+3 Modes of vi operation
+
+1. Command Mode (default)( 1-2 a-append 1-3 - Esc:) 
+2. Editor Mode	(2-1 - Esc, 2-3 - Esc:)
+3. Global Command Mode (3-1 - Esc)
+
+
+1. Command mode (Esc)
+---------------
+a - append
+A - append end of Line
+i - insert
+r - replace
+cw - change word
+u - undo
+yy - yank lines (copy lines)
+p - place (paste)
+dd - Delete lines (ndd) 
+x - delete character
+/<word>  - search word
+G - ground (Bottom of document)
+1G - top of the document
+O - Insert blank line upwards
+
+3. Global Command mode
+----------------------
+w - write
+q - quit
+wq or x - Save / quit
+q! - Force quit
+se nu - see the number line
+se nonu - no number line
+%s/<find>/<replace>/g  - find replace globally (s- Search; g-Global)
+
+
+
+bash - Bourne again shell
+
+shell - living place, & Protection
+
+
+
+$ env
+$ set
+
+
+.bash_history - Stores history
+.bashrc - startup script file
+.bash_logout - logout script
+
+
+28.04.2022
+----------
+
+Users / Groups
+
+user management
+
+These are script files for User / group Managment
+/etc/passwd		/etc/group
+/etc/shadow		/etc/gshadow
+
+
+Every user has username, userid, home directory, what shell, encrypted password, 
+
+/etc/passwd 	- 7 fields separated by colon
+
+root:x:0:0:root:/root:/bin/bash
+labsuser:x:1172985:579299::/home/labsuser:/bin/bash
+
+username:x(Enc passwd):userid:groupID:Comment:home directory:bash
+[labsuser@centos ~]$ cat /etc/passwd |cut -f1 -d:    (F - field, d - Delimiter)                    
+
+
+user management - 
+----------------
+useradd - Creates / add users to your OS
+usermod - modified user name
+userdel - To remove user from OS
+
+Group Management
+----------------
+groupadd - Creates group 
+groupmod	
+groupdel - Removes group from OS
+
+passwd - password set / reset happens
+
+sudo - Elevated privileges assigned by root to user is called sudo
+
+
+Adding users 
+
+# sudo useradd ahitt
+
+Adding group
+# sudo groupadd sales
+
+
+# Adding users to group
+# sudo usermod -a -G sales ahitt
+
+
+1. Package Managemnt (Software management)
+
+installing packages / updates
+RPM / deb / 
+install from source
+
+2. Repository 
+yum (can be used for installing / upgrading / removing packages, bundles and distributions)
+yum list
+yum install <package>
+yum remove <package>
+
+
+How to get files from public internet
+# wget	- url (files are downloaded to your location)
+# curl 
+
+For Installing software (Yum)
+$ sudo yum install httpd -y
+
+
+For removing software (Yum)
+$ sudo yum remove httpd -y
+
+For verifying whether software is installed or not
+$ sudo rpm -qa httpd* 	(-q = Query, a - all)
+
+
+29.04.2022
+----------
+Archives -  Backup 
+--------
+
+tar - Tape Archieve
+------------------
+c	Create a tar backup
+t	list the contents of tar backup
+x	Extract the contents of tar backup
+
+v	Verbose (Verify)
+f	file display
+
+
+$ tar cvf backup.tar *
+$ tar tvf backup.tar	
+$ tar xvf backup.tar
+
+
+Compression - gzip /unzip	bzip2
+========================
+
+$ gzip backup.tar
+$ gzip -d backup.tar
+
+ 
+$ tar czvf backup.tar *
+
+$ tar xzvf backup.tar
+
+[labsuser@centos backup]$ tar xzvf ../backup.tar  
+
+
+Cron - Job Scheduler
+--------------------
+
+$ crontab 
+
+-l 	list the tasks in cron
+-e 	edit / create a job in cron
+-r 	remove tasks in cron
+
+
+$ crontab -l (lists the current tasks in Cron)
+$ crontab -e 	(Open vi editor)
+
+1 2 3 4 5 6(command / task)
+
+1. Minutes	(00-59)
+2. Hours	(00-23)
+3. day of the Month (1-31)
+4 Month		(1-12)
+5 Day of Week	(0-6)  (0 - sunday)
+
+00 09 * * * 	(Daily morning 09:00AM)
+00 06 01 * *	(Monthly 1st date 06:00AM
+00 20 * * 5 	(Every Friday 8PM)
+30 09 1 4 *	(Apr 1st 09:30 Every Year)
+
+
+File Integrity - Trust worthyness	- cksum
+
+Difference in files - diff
+
+Managing Services - OS, Applications, from the user scripts,
+-----------------
+
+Service - 	start, stop, restart. status
+
+Automatic - When server starts the service starts (enable /disable)
+
+
+service 
+systemctl 
+
+vmstat - displays virtual memory / Swap Memory
+
+Free Disk space 	- 	df -h 	(displays disk free space)
+Disk usage		-	du
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

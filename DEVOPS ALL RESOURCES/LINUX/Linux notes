@@ -1,0 +1,178 @@
+
+2 Functions of OS
+	* To Make functional all the System Hardware
+        * To Keep your applications on common Platform
+
+1968/69  - 2 Persons - Dennis Ritche, 	Ken Thomspon Bell Labs, AT&T UC
+
+Unix - Ken Thomspon 
+
+system2, system4 78, 1980 systemV
+
+Scintific Programming - Fortran, C. Pascal
+Applications - 
+
+IBM, HP, Sun, Digital, 
+
+Unix - AT&T & BSD
+
+HP IBM - AT&T
+HPUX, AIX
+Sun, Digital, - BSD
+Solaris, Tru64
+
+1987 - Richard Stallman - Founder of - Free (Open Source)
+
+Linus Torvalds - Finnese
+
+1991 - 1994 - Kernel
+
+Kernel - Heart of OS   - LINUX
+
+Linux Advantages - 	OpenSource (Free - No Commercial), More Security & Reliability,
+	3M - Multi User, Terminal & Processing OS,  Virus Free
+
+Linux Flavours / Vendors - Redhat, Ubuntu, Suse, Amazon, 
+
+Linux - 2 Types - (Servers / Desktops)  - GUI / TUI (Terminal User Interface)
+
+Deamons
+
+Kernel, Daemons, Shells, Configuration, appplications, Servers
+
+Shell - An Interface to interact Kernel. or  A user interface for interacting with Kernel and Commands
+
+Shell types - Unix (bsh - Bourne Shell, csh - C Shell, ksh - Korn shell)
+	      Linux (bash - Bourne again shell)
+
+man - Manual (Documentation)
+
+
+Linux Commands
+--------------
+
+Prompt 
+username@hostname ~]$      
+~ - Tilde / Tilder	 -  Home Directory
+
+$ - bash prompt or user
+# - superuser or root or su
+
+
+Linux is case sensitive 
+
+$ clear		- Clears the screen
+$ cal		- Displays calendar
+$ ls 	- list of file / directories
+$ ls -l - lists in long form	(Shortcut is ll)
+$ echo
+$ pwd 	- Present Working Directory
+$ who - display active users logged on
+$whoami  - displays current user name
+$ hostname - displays name of the host
+
+
+Creating Directory
+------------------
+mkdir - Creates Directory
+cd    - Change Directory
+cd ..	- Go back to your previous folder
+rmdir  - Remove Directory
+
+sleep - delays the cursor
+touch - Creates Empty files
+
+cp - copy file(source to destination)
+mv - Moves file (from source to destination)
+rm - removes files (From Source)
+
+
+25.02.2022.
+-----------
+
+pwd 	/home/labsuser
+
+ls	Produces list of files / folders
+ls -a	List of all files / folders (including dot files)
+ls -al  Long listing of all Files / Folders
+
+Wild Cards - * ?  (Two Wild Cards)
+ * 	-	All
+ ? 	-	Single
+
+September	*
+?eptember
+
+
+~	/	a_reports		1 /2/3
+		sep/oct/nov/dec
+files
+
+/home/labsuser 		~
+/home/labsuser/a_reports/
+~/
+
+/home/labsuer/a_reports/1
+
+			
+Filesystem - Organizing files / folders
+-------------------------------------
+root directory /	(reverse slash)
+
+/home/labsuser
+
+
+report_dec_c1
+Full path - 	/home/labsuer/report_dec_c1
+or relative path
+
+absolute path	~/report_dec_c1
+
+
+OS has a file system
+
+Windows 10 - NTFS FAT32
+Linux - Ext3, Ext4, XFS
+
+Pipes / Filter
+
+ls -l |grep txt
+
+| - pipe used to control the direction of data
+
+
+less
+more
+grep
+tail
+head
+cut
+wc
+
+
+ll |wc
+
+
+
+more <filename>
+cat <filename> |more
+
+
+
+>   redirection
+>>  append
+
+cat - To view contents of file
+
+
+
+Home Work
+---------
+1. Lab 2a Practice upto 12 (Mandate and let me know any questions) - Use Lab2a for reference (Youtube Link)
+2. File system Explore root directory, Abosolute path, Relative path
+3. Pipes / Filters - head, tail, more, less, grep , wc
+4. redirection > , Append >>
+
+
+
+	

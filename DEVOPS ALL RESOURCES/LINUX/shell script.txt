@@ -1,0 +1,34 @@
+#find all files whose name start with <yourname> and extract detemine the highest number .
+
+numbers= ( $( ls | grep ^$YourName | grep -oE [0-9]\+ ))
+
+ declare -i maxNumber=0
+ declare -i num=0
+ for ((i=0; i< ${#numbers[@]}; i++))
+
+do
+ num =${numbers[i]}
+if (( num > maxNumber))
+then
+maxNumber=$num
+fi
+done
+  echo "max=$maxnumber"
+
+# initialise next number .
+
+declare -i nextnumber=$maxNumber+1
+echo $nextNumber 
+
+# create next 25 files 
+
+for i in {1..25}
+do
+echo "creating file number $i"
+nextFileName="$YourName$nextNumber"
+echo $nextFileName 
+touch $nextFileName
+nextNumber=$nextNumber+1
+done 
+
+echo "file creation done "
