@@ -1,0 +1,81 @@
+Linux
+
+File permissions
+----------------
+
+1. Every file / folder - 3 types of permissions
+
+r - read	w - write	x - Execute
+rwx
+
+2. Permissions can be assigned for 3 categories
+
+owner	Group	others
+owner - whoever has created the file / folder is owner
+Group - To which group he belongs to
+others - other than owner and group
+
+3. Permissions are assigned by owner
+
+owner/group/others
+rwx rwx rwx
+421 421 421
+
+abc - 	rw_r--r--	644
+abc1	rwxr-x---	750
+xyz     r--r-----	440
+
+775 	rwxrwxr-x
+664	rw-rw-r--
+650	rw-r-x---
+541	r-xr----x
+
+chmod 644 abc
+(owner)
+
+
+PROCESS	- Systamatic approach / procedures which defines the task
+-------
+Task - activities 
+fetch - executing
+
+Task Types are inititated from OS, Applications, Users, Network
+
+
+How to list the process
+$ ps 	(process status in your terminal)
+$ ps -ef (e-extended, f- full list) 
+
+Every process has an ID (Unique)
+ID who initiates the task is called as parent Process
+parent child relationship
+
+Foreground process - a task initiated / running on bash shell
+background process - a task initiated without help of bash shell
+
+$ sleep 1000 
+$ jobs		(PID & PPID)
+	
+How to terminate Process
+------------------------
+
+kill
+
+1 - nohup
+9 - Force kill
+15 - sigterm
+
+kill -9 pid
+
+How to increase /decrease priority of task / job
+------------------------------------------------
+
+priority times lines
+
+(--------------------------------------------------------------------)
+-20 				0				  +19
+Very high priority						Very less
+								prioirty
+ni - nice priority
+renice - for existing tasks priorities
+nice - new task priorities
